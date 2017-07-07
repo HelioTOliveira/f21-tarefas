@@ -7,16 +7,20 @@
 <html>
 	<head>
 	    <script type="text/javascript" src="resources/js/jquery.js"></script>
+	    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
+		<script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+		<script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
+		
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 		<title>Lista Tarefa</title>
 	</head>
 	<body>
 		<script type="text/javascript">
 			function finalizaAgora(id) {
-				$.post("finalizaTarefa", {'id' : id}, function() {
+				$.post("finalizaTarefa", {'id' : id}, function(resposta) {
 				// selecionando o elemento html através da
 				// ID e alterando o HTML dele
-				$("#tarefa_"+id).html("Finalizado");
+				$("#tarefa_"+id).html(resposta);
 				});
 			}
 		</script>
@@ -32,7 +36,7 @@
 				<th>Modificar</th>
 			</tr>
 			<c:forEach items="${tarefas}" var="tarefa">
-				<tr>
+				<tr id="tarefa_${tarefa.id}">
 					<td>${tarefa.id}</td>
 					<td>${tarefa.descricao}</td>
 					<c:if test="${tarefa.finalizado eq false}">
