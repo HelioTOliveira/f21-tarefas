@@ -10,7 +10,7 @@
 	    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
 		<script src="http://code.jquery.com/jquery-1.8.2.js"></script>
 		<script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
-		
+		<link type="text/css" href="resources/css/tarefas.css" rel="stylesheet" />
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 		<title>Lista Tarefa</title>
 	</head>
